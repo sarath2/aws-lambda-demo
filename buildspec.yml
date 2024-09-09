@@ -9,7 +9,8 @@ phases:
       - pip install aws-sam-cli
   build:
     commands:
-      - sam build
+      - echo "123 Starting build phase"
+      - sam build --template-file template.yaml
       - sam package --template-file template.yaml --s3-bucket aws-sam-cli-managed-default-samclisourcebucket-xco3nyxwukgo --output-template-file packaged.yaml
   post_build:
     commands:
